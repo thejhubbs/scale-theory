@@ -1,14 +1,3 @@
-//Chromatic
-
-//Scaletype(name, description, pattern)
-//ScaleInstance(key, type) => Extends
-//note(1-7 mod)
-//chord(common, (note(1), note(3), note(5)))
-
-//Instrument (Octave, Note)
-//Tuning & String 
-
-
 const rawScaleText = [
     {
         name: "Major",
@@ -84,13 +73,13 @@ class Note {
     }
 
     static diatonic(){
-        return ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+        return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
     }
 
     step(amount){
         var newNote = Note.diatonic()[(this.integerNote + amount) % 12];
         var newOctave = this.octave;
-        if(this.integerNote + amount > 12) {
+        if(this.integerNote + amount >= 12) {
             newOctave++;
         }
         return new Note({note: newNote, octave: newOctave});
@@ -106,13 +95,24 @@ console.log(minorScale);
 //KEY TESTS
 //
 key = new Note({note: "C", octave: 3});
-console.log(key.note);
-console.log(key.integerNote);
+if(!(key.note === "C")){ console.log(key.note); }
+if(!(key.integerNote === 0)){ console.log(key.integerNote); }
+if(!(key.octave === 3)){ console.log(key.octave); }
+
 if(!(key.step(0).note === "C")){console.log( "KEY.STEP() Should be C:" +  key.step(0).note);}
+if(!(key.step(0).octave === 3)){console.log( "KEY.STEP() Should be 3:" +  key.step(0).octave);}
+
 if(!(key.step(1).note === "C#")){console.log( "KEY.STEP() Should be C#:" +  key.step(1).note);}
+if(!(key.step(1).octave === 3)){console.log( "KEY.STEP() Should be 3:" +  key.step(1).octave);}
+
 if(!(key.step(2).note === "D")){console.log( "KEY.STEP() Should be D:" +  key.step(2).note);}
+if(!(key.step(2).octave === 3)){console.log( "KEY.STEP() Should be 3:" +  key.step(2).octave);}
+
 if(!(key.step(12).note === "C")){console.log( "KEY.STEP() Should be C:" +  key.step(12).note);}
+if(!(key.step(12).octave === 4)){console.log( "KEY.STEP() Should be 4:" +  key.step(12).octave);}
+
 if(!(key.step(13).note === "C#")){console.log( "KEY.STEP() Should be C#:" +  key.step(13).note);}
+if(!(key.step(13).octave === 4)){console.log( "KEY.STEP() Should be 4:" +  key.step(13).octave);}
 
 
 //
