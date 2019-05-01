@@ -1,6 +1,7 @@
+
 class FretInstrument {
     constructor(attr) {
-        this.tuning = 
+        this.tuning = attr.tuning;
         this.number_of_frets = attr.number_of_frets;        
     }
 }
@@ -31,3 +32,8 @@ standardTuning = new Tuning( {strings: [ low_e_string, a_string, d_string, g_str
 standardParseTuning = Tuning.parseStringNotes(["E2", "A2", "D3", "G4", "B4", "E5"]);
 console.log(standardParseTuning);
 console.log(standardTuning);
+
+sgGuitar = new FretInstrument({tuning: standardTuning, number_of_frets: 24});
+miniGuitar = new FretInstrument({tuning: standardTuning, number_of_frets: 16});
+console.log(sgGuitar);
+console.log(miniGuitar);
