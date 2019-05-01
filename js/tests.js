@@ -57,3 +57,26 @@ aMinorScale = new ScaleInstance({key: aKey, scale: minorScale});
 if((cMajorScale.notesInScale())){console.log(aMinorScale.notesInScale());};
 
 
+//
+//Tuning
+//
+low_e_string = new Note({note: "E", octave: 2});
+a_string = new Note({note: "A", octave: 2});
+d_string = new Note({note: "D", octave: 3});
+g_string = new Note({note: "G", octave: 4});
+b_string = new Note({note: "B", octave: 4});
+high_e_string = new Note({note: "E", octave:5});
+
+standardTuning = new Tuning( {strings: [ low_e_string, a_string, d_string, g_string, b_string, high_e_string ]} );
+standardParseTuning = Tuning.parseStringNotes(["E2", "A2", "D3", "G4", "B4", "E5"]);
+console.log(standardParseTuning);
+console.log(standardTuning);
+
+
+//
+//FretInstrument
+//
+sgGuitar = new FretInstrument({tuning: standardTuning, number_of_frets: 24});
+miniGuitar = new FretInstrument({tuning: standardTuning, number_of_frets: 16});
+console.log(sgGuitar);
+console.log(miniGuitar);

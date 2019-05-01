@@ -1,3 +1,36 @@
+class Note {
+    constructor(attr) {
+        this.note = attr.note;
+        this.integerNote = Note.diatonic().indexOf(this.note);
+        this.octave = attr.octave;
+    }
+
+    static parseNote(string){
+        var note, octave;
+        if(string.length == 2){
+            note = string[0];
+            octave = parseInt(string[1]);
+        } else if (string.length == 3) {
+            note = string[0] + string[1];
+            octave = parseInt(string[2]);
+        }
+        return new Note({note: note, octave: octave});
+    }
+
+    static diatonic(){
+        return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+    }
+
+    step(amount){
+        var newNote = Note.diatonic()[(this.integerNote + amount) % 12];
+        var newOctave = this.octave;
+        if(this.integerNote + amount >= 12) {
+            newOctave++;
+        }
+        return new Note({note: newNote, octave: newOctave});
+    }
+}
+
 class ScaleType {
     constructor(attr) {
         this.name = attr.name;
@@ -51,36 +84,38 @@ class ScaleInstance {
     }
 }
 
-class Note {
+
+class Tuning { 
+    constructor(attr){
+        this.strings = attr.strings;
+    }
+
+    static parseStringNotes(array_of_notes){
+        var string_array = [];
+        array_of_notes.forEach((item) => {
+            string_array.push(Note.parseNote(item));
+        });
+        return new Tuning( {strings: string_array} );
+    }
+
+    
+}
+
+class FretInstrument {
     constructor(attr) {
-        this.note = attr.note;
-        this.integerNote = Note.diatonic().indexOf(this.note);
-        this.octave = attr.octave;
+        this.tuning = attr.tuning;
+        this.number_of_frets = attr.number_of_frets;        
     }
 
-    static parseNote(string){
-        var note, octave;
-        if(string.length == 2){
-            note = string[0];
-            octave = parseInt(string[1]);
-        } else if (string.length == 3) {
-            note = string[0] + string[1];
-            octave = parseInt(string[2]);
-        }
-        return new Note({note: note, octave: octave});
-    }
-
-    static diatonic(){
-        return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-    }
-
-    step(amount){
-        var newNote = Note.diatonic()[(this.integerNote + amount) % 12];
-        var newOctave = this.octave;
-        if(this.integerNote + amount >= 12) {
-            newOctave++;
-        }
-        return new Note({note: newNote, octave: newOctave});
+    printFretboard(){
+        var fretboardHTML = "";
+        this.tuning.strings.reverse().forEach((item)=>{
+            var returnHTML = item.note + item.octave + "| - - - - - - - - - - - - - - - - -"
+            fretboardHTML += "<div>" + returnHTML + "</div>";
+        
+        });
+        document.getElementById('fretboard').innerHTML = fretboardHTML;
     }
 }
+
 
