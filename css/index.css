@@ -64,8 +64,15 @@ h1 { font-size: 48px;}
 
 .fret {
     display: inline-block;
-    width: 24px;
+	width: 24px;
+	padding:10px;
     color:#ccc;
+}
+
+.highlighted-fret {
+	color:black;
+	background-color:#eee;
+	border-radius:100%;
 }
 
 

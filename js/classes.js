@@ -98,7 +98,7 @@ class ScaleInstance {
         notes.forEach((note) => {
             var frets = document.getElementsByClassName(`${note}-note`);
             for(let i =0; i < frets.length; i++){
-                frets[i].setAttribute('style', 'color:black;background-color:#eee;');
+                frets[i].classList.add("highlighted-fret");
             }
         });
     }
