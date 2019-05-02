@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
     <script src="js/text-database.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/main.js"></script>
@@ -8,16 +10,36 @@
 </head>
 
 <body onload="main();">
-    <div class="main-box">
-        <header>
-            <h1>ScaleTheory</h1>
-            <p>Learn scales & positions on guitar</p>
-        </header>
 
-        <section id="fretboard">
-            <p></p>
-        </section>
+    <div class="main-box">
+
+        <div class="inner-box">
+            <header>
+                <h1>ScaleTheory</h1>
+                <p>Learn scales & positions on guitar</p>
+            </header>
+
+            <section id="menu">
+                <select>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+                <select>
+                    <option>Major</option>
+                    <option>Minor</option>
+                </select>
+            </section>
+
+            <hr />
+
+            <section id="fretboard">
+                <p></p>
+            </section>
+        </div>
     </div>
+
 </body>
 
 </html>

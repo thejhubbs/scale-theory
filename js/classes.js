@@ -110,12 +110,22 @@ class FretInstrument {
     printFretboard(){
         var fretboardHTML = "";
         this.tuning.strings.reverse().forEach((item)=>{
-            var returnHTML = item.note + item.octave + "| - - - - - - - - - - - - - - - - -"
+            var returnHTML = item.note + item.octave + "| ";
+
+            for(let i=0; i < this.number_of_frets; i++) {
+                var fretNote = item.step(i);
+                returnHTML = returnHTML + "<span class='fret " + fretNote.note + "-note '>" + fretNote.note + " </span> ";
+            }
+
             fretboardHTML += "<div>" + returnHTML + "</div>";
         
         });
         document.getElementById('fretboard').innerHTML = fretboardHTML;
     }
+
+
+
+
 }
 
 
