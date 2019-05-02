@@ -2,8 +2,9 @@ function main() {
     const defaultGuitar = initializeFretInstrument();
     const defaultScale = initializeScale();
 
-    
-
+    initializeMenu('key', Note.diatonicKeyChoices(), 0);
+    initializeMenu('scale', rawScaleText, 'name');
+    initializeMenu('instrument', rawInstrumentData, 'description');
 
 }
 
@@ -29,4 +30,13 @@ function initializeScale(){
     //Call printScale to highlight the correct notes.
     defaultScale.printScale();
     return defaultScale;
+}
+
+function initializeMenu(id, group, accessor){
+    var menu = document.getElementById(`${id}-menu`);
+    var menuOptions = "";
+    group.forEach((item) => {
+        menuOptions += `<option>${item[accessor]}</option>`;
+    });
+    menu.innerHTML = menuOptions;
 }

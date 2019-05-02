@@ -21,6 +21,10 @@ class Note {
         return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
     }
 
+    static diatonicKeyChoices(){
+        return [["C"], ["C#"], ["D"], ["D#"], ["E"], ["F"], ["F#"], ["G"], ["G#"], ["A"], ["A#"], ["B"]];
+    }
+
     step(amount){
         var newNote = Note.diatonic()[(this.integerNote + amount) % 12];
         var newOctave = this.octave;
