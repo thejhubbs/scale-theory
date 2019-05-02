@@ -75,6 +75,7 @@ class ScaleInstance {
     }
 
     notesInScale() {
+        //Returns array of note objects
         var notes = [];
         for(let i =0; this.scale.pattern.length > i; i++){
             notes.push(this.note(i));
@@ -82,6 +83,27 @@ class ScaleInstance {
         return notes;
 
     }
+
+    noteStringArray() {
+        //Returns array of just the note strings
+        var noteStrings = [];
+        this.notesInScale().forEach((item) => {
+            noteStrings.push(item.note);
+        });
+        return noteStrings;
+    }
+
+    printScale() {
+        var notes = this.noteStringArray();
+        notes.forEach((note) => {
+            var frets = document.getElementsByClassName(`${note}-note`);
+            for(let i =0; i < frets.length; i++){
+                frets[i].setAttribute('style', 'color:black;background-color:#eee;');
+            }
+        });
+    }
+
+
 }
 
 
