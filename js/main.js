@@ -1,10 +1,10 @@
 function main() {
-    const defaultGuitar = initializeFretInstrument();
-    const defaultScale = initializeScale();
+    var defaultGuitar = initializeFretInstrument();
+    var defaultScale = initializeScale();
+    defaultGuitar.printFretboard();
+    defaultScale.printScale();
+    initializeMenus(defaultGuitar, defaultScale);
 
-    initializeMenu('key', Note.diatonicKeyChoices(), 0);
-    initializeMenu('scale', rawScaleText, 'name');
-    initializeMenu('instrument', rawInstrumentData, 'description');
 
 }
 
@@ -18,7 +18,6 @@ function initializeFretInstrument() {
     //Pass in tuning object and default amount of frets.
     var defaultGuitar = new FretInstrument({tuning: defaultTuning, number_of_frets: frets});
     //Print the notes on the fretboard.
-    defaultGuitar.printFretboard();
     return defaultGuitar;
 }
 
@@ -28,15 +27,42 @@ function initializeScale(){
     defaultScaleType = ScaleType.grabByName("Major");
     defaultScale = new ScaleInstance({key: defaultKey, scale: defaultScaleType});
     //Call printScale to highlight the correct notes.
-    defaultScale.printScale();
     return defaultScale;
 }
 
-function initializeMenu(id, group, accessor){
+function initializeMenus(defaultGuitar, defaultScale){
+    createMenuHTML('key', Note.diatonicKeyChoices(), 0);
+    createMenuHTML('scale', rawScaleText, 'name');
+    createMenuHTML('instrument', rawInstrumentData, 'description');
+
+    var keyMenu = document.getElementById('key-menu');
+    keyMenu.onchange = function(){
+        defaultScale.key = Note.parseNote(keyMenu.value);
+        defaultGuitar.printFretboard();
+        defaultScale.printScale();
+    }
+
+    var scaleMenu = document.getElementById('scale-menu');
+    scaleMenu.onchange = function(){
+        defaultScale.scale = ScaleType.grabByName(scaleMenu.value);
+        defaultGuitar.printFretboard();
+        defaultScale.printScale();
+    }
+
+    var instrumentMenu = document.getElementById('instrument-menu');
+    instrumentMenu.onchange = function(){
+        var newInstrument = FretInstrument.grabByDescription(instrumentMenu.value);
+        defaultGuitar = newInstrument;
+        defaultGuitar.printFretboard();
+        defaultScale.printScale();
+    }
+}
+
+function createMenuHTML(id, group, accessor){
     var menu = document.getElementById(`${id}-menu`);
     var menuOptions = "";
     group.forEach((item) => {
-        menuOptions += `<option>${item[accessor]}</option>`;
+        menuOptions += `<option value="${item[accessor]}">${item[accessor]}</option>`;
     });
     menu.innerHTML = menuOptions;
 }

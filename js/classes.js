@@ -21,6 +21,8 @@ class Note {
         return ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
     }
 
+    //this is unfortuantely necessary as easiest fix for use of diatonic() with initializeMenu function; 
+    //Those requirements assume youre passing hash, but instead we nest the strings and we call accessor 0
     static diatonicKeyChoices(){
         return [["C"], ["C#"], ["D"], ["D#"], ["E"], ["F"], ["F#"], ["G"], ["G#"], ["A"], ["A#"], ["B"]];
     }
@@ -149,7 +151,15 @@ class FretInstrument {
         document.getElementById('fretboard').innerHTML = fretboardHTML;
     }
 
-
+    static grabByDescription(description){
+        var fretInstrument;
+        rawInstrumentData.forEach((item) => {
+            if(item.description == description){
+                fretInstrument = item;
+            }
+        });
+        return new FretInstrument({tuning: Tuning.parseStringNotes(fretInstrument.tuningArray), number_of_frets: fretInstrument.number_of_frets});
+    }
 
 
 }
