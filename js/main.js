@@ -37,7 +37,7 @@ function initializeMenus(defaultGuitar, defaultScale){
 
     var keyMenu = document.getElementById('key-menu');
     keyMenu.onchange = function(){
-        defaultScale.key = Note.parseNote(keyMenu.value);
+        defaultScale.key = Note.parseNote(keyMenu.value + "3");
         defaultGuitar.printFretboard();
         defaultScale.printScale();
     }

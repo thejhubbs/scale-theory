@@ -105,6 +105,9 @@ class ScaleInstance {
             var frets = document.getElementsByClassName(`${note}-note`);
             for(let i =0; i < frets.length; i++){
                 frets[i].classList.add("highlighted-fret");
+                if(note === notes[0]){
+                    frets[i].classList.add("root-fret");
+                }
             }
         });
     }
