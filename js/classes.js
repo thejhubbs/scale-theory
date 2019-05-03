@@ -140,7 +140,7 @@ class FretInstrument {
 
     printFretboard(){
         var fretboardHTML = "";
-        this.tuning.strings.reverse().forEach((item)=>{
+        this.tuning.strings.forEach((item)=>{
             var returnHTML = item.note + item.octave + "| ";
 
             for(let i=0; i < this.number_of_frets; i++) {

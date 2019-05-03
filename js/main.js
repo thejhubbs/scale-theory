@@ -11,7 +11,7 @@ function main() {
 //Creates a default FretInstrument, prints, and returns it.
 function initializeFretInstrument() {
     //Create the default FretInstrument object; starting with Tuning object; standard EADGBE on a 6 string with 24 frets
-    var tuningArray = ["E2", "A2", "D3", "G4", "B4", "E5"];
+    var tuningArray = ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'];
     var frets = 24;
     //Function is using array of note/octave pairs as a string, and parsing into Tuning object
     var defaultTuning = Tuning.parseStringNotes(tuningArray);

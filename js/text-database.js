@@ -45,32 +45,32 @@ const rawScaleText = [
 rawInstrumentData = [
     {
         number_of_frets: 24,
-        tuningArray: ['E2', 'A2', 'D3', 'G4', 'B4', 'E5'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Guitar, Standard Tuning, 24 frets"
     }, 
     {
         number_of_frets: 24,
-        tuningArray: ['D2', 'A2', 'D3', 'G4', 'B4', 'E5'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Guitar, Drop D Tuning, 24 frets"
     }, 
     {
         number_of_frets: 24,
-        tuningArray: ['B1', 'E2', 'A2', 'D3', 'G4', 'B4', 'E5'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Guitar, 7 String Standard Tuning, 24 frets"
     },
     {
         number_of_frets: 24,
-        tuningArray: ['D2', 'A2', 'D3', 'G4', 'B4', 'E5'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Guitar, Drop D Tuning, 24 frets"
     }, 
     {
         number_of_frets: 24,
-        tuningArray: ['B1', 'E2', 'A2', 'D3', 'G4', 'B4', 'E5'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Guitar, 7 String Standard Tuning, 24 frets"
     },
     {
         number_of_frets: 24,
-        tuningArray: ['E1', 'A1', 'D2', 'G3'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
         description: "Bass, Standard Tuning, 24 frets"
     }
 ];
