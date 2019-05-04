@@ -132,7 +132,7 @@ select option {
 	padding:10px;
 	border-radius:100%;
 	border: 2px solid transparent;
-	margin:2px;
+	margin: 2px 4px;
     color:#ccc;
 }
 

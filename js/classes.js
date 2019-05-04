@@ -72,7 +72,6 @@ class ScaleInstance {
 
         //Factor for octaves
         var octaves = Math.floor(position/scaleLength);
-
         position = position % scaleLength;
 
         var distance_from_root = this.scale.pattern[position]
@@ -149,13 +148,25 @@ class FretInstrument {
 
             for(let i=0; i < this.number_of_frets; i++) {
                 var fretNote = item.step(i);
-                returnHTML = returnHTML + "<span class='fret " + fretNote.note + "-note '>" + fretNote.note + " </span> ";
+                returnHTML = returnHTML + "<span class='fret " + fretNote.note + "-note '>" + fretNote.note + "</span>";
             }
 
             fretboardHTML += "<div>" + returnHTML + "</div>";
         
         });
-        document.getElementById('fretboard').innerHTML = fretboardHTML;
+
+        //When to write the fret number
+        var fretArray = [0, 3, 5, 7, 10];
+        var fretHTML = "<span class='fret'></span>";
+        for(let i=0; i < this.number_of_frets; i++){
+            var printFret = "";
+            if(fretArray.includes(i%12)){ printFret = i; }
+            fretHTML+="<span class='fret string-name'>" + printFret + "</span>";
+        }
+        fretHTML = "<div>" + fretHTML + "</div>";
+        
+        document.getElementById('fretboard').innerHTML = fretHTML + fretboardHTML + fretHTML;
+
     }
 
     static grabByDescription(description){

@@ -38,13 +38,30 @@ const rawScaleText = [
     },
     {
         name: "Pentatonic Minor",
-        pattern: [0, 2, 4, 7, 9]
+        pattern: [0, 3, 5, 7, 8]
     },
     {
         name: "Blues Pentatonic Minor",
         pattern: [0, 2, 3, 5, 7, 8, 10]
     },
 
+    
+    {
+        name: "Major Triad",
+        pattern: [0, 4, 7]
+    },
+    {
+        name: "Minor Triad",
+        pattern: [0, 3, 7]
+    },
+    {
+        name: "7 Triad",
+        pattern: [0, 4, 7, 10]
+    },
+    {
+        name: "m7 Triad",
+        pattern: [0, 3, 7, 10]
+    },
 
     {
         name: "Chromatic",
@@ -54,30 +71,36 @@ const rawScaleText = [
 
 ];
 
+//MUST ADD ONE TO PHSICAL FRET TO ACCOUNT FOR OPEN STRING POSITION
 rawInstrumentData = [
     {
-        number_of_frets: 24,
+        number_of_frets: 23,
         tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
-        description: "Guitar, Standard Tuning, 24 frets"
+        description: "Guitar, Standard Tuning, 22 frets"
     }, 
     {
-        number_of_frets: 24,
+        number_of_frets: 25,
         tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'D2'],
         description: "Guitar, Drop D Tuning, 24 frets"
     }, 
     {
-        number_of_frets: 24,
+        number_of_frets: 25,
         tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2', 'B1'],
         description: "Guitar, 7 String Standard Tuning, 24 frets"
     },
     {
-        number_of_frets: 24,
+        number_of_frets: 25,
         tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'C2'],
         description: "Guitar, Drop C Tuning, 24 frets"
     },
     {
-        number_of_frets: 24,
+        number_of_frets: 25,
         tuningArray: ['G3', 'D2', 'A1', 'E1'],
         description: "Bass, Standard Tuning, 24 frets"
+    },
+    {
+        number_of_frets: 17,
+        tuningArray: ['D3', 'B3', 'G2', 'D2', 'G4'],
+        description: "Banjo, Standard Open G, 16 frets"
     }
 ];

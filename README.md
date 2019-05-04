@@ -6,14 +6,9 @@ Written in pure JS.
 
 --TODO Next goals--
 Design 
-Loading screen
-
-DB info
+Loading problem
 
 Click and highlight & snap scroll
-
-fret numbers
-move string names outside of fretboard(scroll)
 
 ++
 Scale descriptions & categories
