@@ -89,7 +89,7 @@ header h2 { font-size: 24px; font-family:"Pacifico"; font-weight:normal;}
 }
 
 .inner-box{
-	background: rgba(55,55,55,.6);
+	background: rgba(25,25,45,.8);
 	padding: 160px 15px 75px;
 	width:100%;
 	min-height:100%;
@@ -133,7 +133,7 @@ select {
 	background: rgba(255,255,255,.2);
 	font-weight:900;
 	font-family:"Muli";
-
+	margin-bottom:8px;
 	color:black;
 	border:2px solid white;	
 }
@@ -141,7 +141,7 @@ select:hover{background-color:rgba(255,255,255,.4);}
 select:focus{
 	background: rgba(255,255,255,.6);
 	outline:none;
-	border:2px solid blue;	
+	border:2px solid rgb(125,95,180);	
 	color:white;
 }
 select option {
@@ -154,8 +154,19 @@ select option {
 	background: rgba(255,255,255,.6);
 	padding: 15px 0;
 	margin:25px 0;
-	border:4px rgb(75,75,75) outset;
+	border:4px rgb(75,75,95) outset;
+	border-radius:10px;
 }
+#fretboard {
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+#fretboard::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
 
 .fret {
     display: inline-block;
@@ -177,7 +188,7 @@ select option {
 
 	background-color:#aaf;
 	color:white;
-	border: 2px solid blue;
+	border: 2px solid rgb(125,95,180);
 
 }
 
@@ -188,10 +199,10 @@ select option {
 }
 
 .selected-fret.root-fret {
-	background-color:blue;
+	background-color:rgb(125,95,180);
 	color:white;
 	border: 2px solid #aaf;
 
 }
-.string-name {color:black;}
+.string-name {color:black;font-family:"Noto Serif";}
 

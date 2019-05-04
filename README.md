@@ -5,10 +5,7 @@ Easily and freely access all tuning and scales.
 Written in pure JS.
 
 --TODO Next goals--
-Design 
-Loading problem
-
-Click and highlight & snap scroll
-
-++
+For V1.0
 Scale descriptions & categories
+Instrument & Tuning Fields
+Click and highlight & snap scroll
