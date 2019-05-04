@@ -90,10 +90,24 @@ header {
 	padding:25px;
 	position:absolute;
 }
-
+a {
+	color:White;
+}
 select {
 	padding:10px;
 	border-radius:10px;
+	background: rgba(255,255,255,.2);
+	font-weight:900;
+	font-family:"Muli";
+	color:white;
+	border:2px solid blue;
+}
+select:hover{background-color:rgba(255,255,255,.4);}
+select:focus{
+	color:black;
+	background: rgba(255,255,255,.6);
+	border-color:white;
+	outline:none;
 }
 
 #fretboard{
@@ -117,8 +131,6 @@ select {
 
 .highlighted-fret {
 	color:black;
-	background-color:#eee;
-	
 	border: 2px solid grey;
 	
 }
@@ -132,10 +144,9 @@ select {
 }
 
 .selected-fret {
-	background-color:grey;
-	color:white;
-	border: 2px solid #eee;
-
+	color:black;
+	border: 2px solid grey;
+	background-color:#eee;
 }
 
 .selected-fret.root-fret {
