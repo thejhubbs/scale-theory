@@ -141,7 +141,7 @@ class FretInstrument {
     printFretboard(){
         var fretboardHTML = "";
         this.tuning.strings.forEach((item)=>{
-            var returnHTML = item.note + item.octave + "| ";
+            var returnHTML = "<span class='fret string-name'>" + item.note + item.octave + " | </span>";
 
             for(let i=0; i < this.number_of_frets; i++) {
                 var fretNote = item.step(i);
