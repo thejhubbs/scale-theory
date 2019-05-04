@@ -42,6 +42,10 @@ class ScaleType {
         this.pattern = attr.pattern;
     }
 
+    get length() {
+        return this.pattern.length;
+    }
+
     static grabByName(name){
         var scale;
         rawScaleText.forEach((item) => {
@@ -64,10 +68,12 @@ class ScaleInstance {
         //For convention and calling, the root should be position 1, octave position 8. 
         //Accounting for index arrays starting at 0
         position = position-1;
-        //Factor for octaves
-        var octaves = Math.floor(position/7);
+        var scaleLength = this.scale.length;
 
-        position = position % 7;
+        //Factor for octaves
+        var octaves = Math.floor(position/scaleLength);
+
+        position = position % scaleLength;
 
         var distance_from_root = this.scale.pattern[position]
         return this.key.step( distance_from_root + (octaves * 12) );
