@@ -57,12 +57,12 @@ table {
 /*
 CUSTOM CSS BELOW
 */
-@media screen and (min-width: 500px){
+@media screen and (min-width: 700px){
 	.mobile-only { display: none;}
 }
 
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
 	.tablet-above { display: none;}
 }
 
@@ -94,7 +94,7 @@ header h2 { font-size: 24px; font-family:"Pacifico"; font-weight:normal;}
 	min-height:100%;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
 	.inner-box { padding: 100px 10px 10px;}
 }
 
@@ -107,7 +107,7 @@ header {
 	position:fixed;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
 	header { display:flex; justify-content: space-between;align-items:center;}
 }
 
