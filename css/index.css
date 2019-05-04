@@ -58,9 +58,22 @@ table {
 /*
 CUSTOM CSS BELOW
 */
+@media screen and (min-width: 500px){
+	.mobile-only { display: none;}
+}
+
+
+@media screen and (max-width: 500px){
+	.tablet-above { display: none;}
+}
 
 * {font-family: "Poiret One";font-weight:700;}
 header h1 { font-size: 48px; font-family:"Pacifico";}
+header h2 { font-size: 24px; font-family:"Pacifico"; font-weight:normal;}
+
+@media screen and (max-width: 500px){
+	header a.mobile-only { display:block;}
+}
 
 
 .main-box {
@@ -77,9 +90,13 @@ header h1 { font-size: 48px; font-family:"Pacifico";}
 
 .inner-box{
 	background: rgba(55,55,55,.6);
-	padding: 160px 15px 25px;
+	padding: 160px 15px 75px;
 	width:100%;
 	min-height:100%;
+}
+
+@media screen and (max-width: 500px){
+	.inner-box { padding: 100px 10px 10px;}
 }
 
 header {
@@ -88,11 +105,25 @@ header {
 	color:white;
 	top:0;
 	padding:25px;
-	position:absolute;
+	position:fixed;
 }
+
+@media screen and (max-width: 500px){
+	header { display:flex; justify-content: space-between;align-items:center;}
+}
+
 header p{
 	margin:10px 0;
 }
+footer {
+	position: fixed;
+	bottom:0;
+	background-image: linear-gradient(#0a0a0a, #222,  black);
+	color:white;
+	width:100%;
+	padding:15px;
+}
+
 a {
 	color:White;
 }

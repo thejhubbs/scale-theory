@@ -14,7 +14,7 @@ function initializeScreen() {
     dynamicBox.innerHTML = `<section id="menu">
                 <select id="key-menu"></select>
                 <select id="scale-menu"></select>
-                <br /><!--Should be mobile only-->
+                <br class="mobile-only" />
                 <select id="instrument-menu"></select>
             </section>
 
