@@ -6,7 +6,7 @@ const rawScaleText = [
     },
     {
         name: "Minor",
-        pattern: [0, 2, 4, 5, 7, 9, 11],
+        pattern: [0, 2, 3, 5, 7, 8, 10],
         description: "A happy sounding scale"
     },
     {
@@ -50,27 +50,22 @@ rawInstrumentData = [
     }, 
     {
         number_of_frets: 24,
-        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'D2'],
         description: "Guitar, Drop D Tuning, 24 frets"
     }, 
     {
         number_of_frets: 24,
-        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2', 'B1'],
         description: "Guitar, 7 String Standard Tuning, 24 frets"
     },
     {
         number_of_frets: 24,
-        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
-        description: "Guitar, Drop D Tuning, 24 frets"
-    }, 
-    {
-        number_of_frets: 24,
-        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
-        description: "Guitar, 7 String Standard Tuning, 24 frets"
+        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'C2'],
+        description: "Guitar, Drop C Tuning, 24 frets"
     },
     {
         number_of_frets: 24,
-        tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
+        tuningArray: ['G3', 'D2', 'A1', 'E1'],
         description: "Bass, Standard Tuning, 24 frets"
     }
 ];

@@ -30,6 +30,9 @@ if(!(key.step(12).octave === 4)){console.log( "KEY.STEP() Should be 4:" +  key.s
 if(!(key.step(13).note === "C#")){console.log( "KEY.STEP() Should be C#:" +  key.step(13).note);}
 if(!(key.step(13).octave === 4)){console.log( "KEY.STEP() Should be 4:" +  key.step(13).octave);}
 
+if(!(key.step(37).note === "C#")){console.log( "KEY.STEP() Should be C#:" +  key.step(37).note);}
+if(!(key.step(37).octave === 6)){console.log( "KEY.STEP() Should be 6:" +  key.step(37).octave);}
+
 d_3_note = Note.parseNote("D3");
 cs_4_note = Note.parseNote("C#4");
 

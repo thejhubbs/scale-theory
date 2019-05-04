@@ -28,11 +28,9 @@ class Note {
     }
 
     step(amount){
-        var newNote = Note.diatonic()[(this.integerNote + amount) % 12];
-        var newOctave = this.octave;
-        if(this.integerNote + amount >= 12) {
-            newOctave++;
-        }
+        var rawNoteValue = this.integerNote + amount;
+        var newNote = Note.diatonic()[rawNoteValue % 12];
+        var newOctave = this.octave + Math.floor(rawNoteValue/12);
         return new Note({note: newNote, octave: newOctave});
     }
 }
