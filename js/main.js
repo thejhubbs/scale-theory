@@ -1,27 +1,17 @@
 function main() {
-    initializeScreen();
+    initializeScreen('dynamic-box');
+}
+
+function initializeScreen(id) {
+    var dynamicBox = document.getElementById(id);
+    dynamicBox.innerHTML = fretboardRawHTML;
+
     var defaultGuitar = initializeFretInstrument();
     var defaultScale = initializeScale();
     defaultGuitar.printFretboard();
     defaultScale.printScale();
+
     initializeMenus(defaultGuitar, defaultScale);
-
-
-}
-
-function initializeScreen() {
-    var dynamicBox = document.getElementById('dynamic-box');
-    dynamicBox.innerHTML = `<section id="menu">
-                <select id="key-menu"></select>
-                <select id="scale-menu"></select>
-                <br class="mobile-only" />
-                <select id="instrument-menu"></select>
-            </section>
-
-            <hr />
-            <section id="fretboard"></section>
-            `
-
 }
 
 //Creates a default FretInstrument, prints, and returns it.
@@ -51,6 +41,7 @@ function initializeMenus(defaultGuitar, defaultScale) {
     createMenuHTML('scale', rawScaleText, 'name');
     createMenuHTML('instrument', rawInstrumentData, 'description');
 
+    //When changed, update accordingly.
     var keyMenu = document.getElementById('key-menu');
     keyMenu.onchange = function () {
         defaultScale.key = Note.parseNote(keyMenu.value + "3");
