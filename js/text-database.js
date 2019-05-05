@@ -105,6 +105,7 @@ const rawInstrumentData = [
 ];
 
 const fretboardRawHTML = `
+<hr />
 <section id="menu">
     <select id="key-menu"></select>
     <select id="scale-menu"></select>

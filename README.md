@@ -10,3 +10,6 @@ Download & import googlefont files
 Scale descriptions & categories
 Instrument & Tuning Fields
 Icon & favicon
+Design Checks: phone landscape, table vertical
+Tooltip "How to Use"
+Ad space
