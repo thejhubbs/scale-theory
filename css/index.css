@@ -67,6 +67,7 @@ CUSTOM CSS BELOW
 }
 
 * {font-family: "Poiret One";font-weight:700;}
+header a, header .collapseContent{ font-family:"Muli";}
 header h1 { font-size: 32px; font-family:"Pacifico"; margin: 0 6px;}
 
 
