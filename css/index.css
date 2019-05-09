@@ -67,6 +67,7 @@ CUSTOM CSS BELOW
 }
 
 * {font-family: "Poiret One";font-weight:700;}
+header a, header .collapseContent{ font-family:"Muli";}
 header h1 { font-size: 32px; font-family:"Pacifico"; margin: 0 6px;}
 
 
@@ -91,11 +92,26 @@ header {
 	display:flex;
 	align-items:center;
 	justify-content:space-between;
+	
 }
 
 
 header img {
 	width:32px; height: 32px; 
+}
+
+
+header .collapseContent {
+	width:100%;
+	position:absolute;
+	left:0;
+	background:rgba(25,25,45,.8);
+	padding:10px 5px;
+	display:none;
+}
+
+header .collapseContent.show-menu {
+	display:block;
 }
 
 @media screen and (max-width: 500px){
