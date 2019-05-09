@@ -12,6 +12,7 @@ function initializeScreen(id) {
     defaultScale.printScale();
 
     initializeMenus(defaultGuitar, defaultScale);
+    initializeUserMenu();
 }
 
 //Creates a default FretInstrument, prints, and returns it.
@@ -34,6 +35,31 @@ function initializeScale() {
     defaultScale = new ScaleInstance({ key: defaultKey, scale: defaultScaleType });
     //Call printScale to highlight the correct notes.
     return defaultScale;
+}
+
+function initializeUserMenu() {
+    var instructions = document.getElementById("instructions");
+    var contact = document.getElementById("contact");
+    var body = document.querySelector('body');
+    var contactContent = document.getElementById("contactContent");
+    var instructionsContent = document.getElementById("instructionsContent");
+
+    body.addEventListener('click', (e)=>{
+        if(e.target.getAttribute('id') == 'contact'){
+            e.preventDefault();
+            instructionsContent.classList.remove('show-menu');
+            contactContent.classList.toggle('show-menu');
+        }
+        else if(e.target.getAttribute('id') == 'instructions'){
+            e.preventDefault();
+            contactContent.classList.remove('show-menu');
+            instructionsContent.classList.toggle('show-menu');
+        }
+        else {
+            instructionsContent.classList.remove('show-menu');
+            contactContent.classList.remove('show-menu');
+        }
+    });
 }
 
 function initializeMenus(defaultGuitar, defaultScale) {
@@ -96,7 +122,8 @@ function createMenuHTML(id, group, accessor, secondAccessor = null) {
     var checked = [];
     group.forEach((item) => {
         var value = item[accessor];
-        var str = `<option value="${value}">${value}</option>`;
+        if(id == "category"){ var str = `<option value="${value}">[-${value}-]</option>`; }
+        else {var str = `<option value="${value}">${value}</option>`;}
         if(checked.indexOf(value) < 0) { menuOptions += str; checked.push(value); }
     });
     menu.innerHTML = menuOptions;

@@ -137,8 +137,10 @@ const fretboardRawHTML = `
 <hr />
 <section id="menu">
     <select id="key-menu"></select>
+    <br class="mobile-only" />
     <select id="category-menu"></select>
     <select id="scale-menu"></select>
+    <br class="mobile-only" />
     <select id="instrument-menu"></select>
     <select id="tuning-menu"></select>
 </section>
