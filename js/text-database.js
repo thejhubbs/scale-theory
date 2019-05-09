@@ -45,7 +45,6 @@ const rawScaleText = [
         pattern: [0, 2, 3, 5, 7, 8, 10]
     },
 
-    
     {
         name: "Major Triad",
         pattern: [0, 4, 7]
@@ -72,7 +71,7 @@ const rawScaleText = [
 ];
 
 //MUST ADD ONE TO PHSICAL FRET TO ACCOUNT FOR OPEN STRING POSITION
-rawInstrumentData = [
+const rawInstrumentData = [
     {
         number_of_frets: 23,
         tuningArray: ['E5', 'B4', 'G4', 'D3', 'A2', 'E2'],
@@ -104,3 +103,21 @@ rawInstrumentData = [
         description: "Banjo, Standard Open G, 16 frets"
     }
 ];
+
+const fretboardRawHTML = `
+<hr />
+<section id="menu">
+    <select id="key-menu"></select>
+    <select id="scale-menu"></select>
+    <br class="mobile-only" />
+    <select id="instrument-menu"></select>
+</section>
+
+<hr />
+
+<section id="fretboard"></section>
+`;
+
+
+
+
