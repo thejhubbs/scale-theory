@@ -38,8 +38,12 @@ function initializeScale() {
 
 function initializeMenus(defaultGuitar, defaultScale) {
     createMenuHTML('key', Note.diatonicKeyChoices(), 0);
-    createMenuHTML('scale', rawScaleText, 'name');
-    createMenuHTML('instrument', rawInstrumentData, 'description');
+
+    createMenuHTML('category', rawScaleText, 'category');
+    createMenuHTML('scale', ScaleType.scalesWithCategory('Basic'), 'name');
+ 
+    createMenuHTML('instrument', rawInstrumentData, 'instrument');
+    createMenuHTML('tuning', FretInstrument.tuningsByInstrument('Guitar'), 'description');
 
     //When changed, update accordingly.
     var keyMenu = document.getElementById('key-menu');
@@ -47,6 +51,16 @@ function initializeMenus(defaultGuitar, defaultScale) {
         defaultScale.key = Note.parseNote(keyMenu.value + "3");
         defaultGuitar.printFretboard();
         defaultScale.printScale();
+    }
+
+    var categoryMenu = document.getElementById('category-menu');
+    categoryMenu.onchange = function() {
+        var scales = ScaleType.scalesWithCategory(categoryMenu.value);
+        createMenuHTML('scale', scales, 'name');
+        defaultScale.scale = ScaleType.grabByName(scales[0]['name']);
+        defaultGuitar.printFretboard();
+        defaultScale.printScale();
+    
     }
 
     var scaleMenu = document.getElementById('scale-menu');
@@ -57,19 +71,33 @@ function initializeMenus(defaultGuitar, defaultScale) {
     }
 
     var instrumentMenu = document.getElementById('instrument-menu');
-    instrumentMenu.onchange = function () {
-        var newInstrument = FretInstrument.grabByDescription(instrumentMenu.value);
+    instrumentMenu.onchange = function() {
+        var instruments = FretInstrument.tuningsByInstrument(instrumentMenu.value);
+        createMenuHTML('tuning', instruments, 'description');
+        var newInstrument = FretInstrument.grabByDescription(instruments[0]['description']);
+        defaultGuitar = newInstrument;
+        defaultGuitar.printFretboard();
+        defaultScale.printScale();
+    
+    }
+
+    var tuningMenu = document.getElementById('tuning-menu');
+    tuningMenu.onchange = function () {
+        var newInstrument = FretInstrument.grabByDescription(tuningMenu.value);
         defaultGuitar = newInstrument;
         defaultGuitar.printFretboard();
         defaultScale.printScale();
     }
 }
 
-function createMenuHTML(id, group, accessor) {
+function createMenuHTML(id, group, accessor, secondAccessor = null) {
     var menu = document.getElementById(`${id}-menu`);
     var menuOptions = "";
+    var checked = [];
     group.forEach((item) => {
-        menuOptions += `<option value="${item[accessor]}">${item[accessor]}</option>`;
+        var value = item[accessor];
+        var str = `<option value="${value}">${value}</option>`;
+        if(checked.indexOf(value) < 0) { menuOptions += str; checked.push(value); }
     });
     menu.innerHTML = menuOptions;
 }

@@ -56,6 +56,15 @@ class ScaleType {
         return new ScaleType(scale);
     }
 
+    static scalesWithCategory(categoryName){
+        var scales = [];
+        rawScaleText.forEach((item) => {
+            if (item.category == categoryName) {
+                scales.push(item);
+            }
+        });
+        return scales;
+    }
 }
 
 class ScaleInstance {
@@ -216,6 +225,15 @@ class FretInstrument {
         return new FretInstrument({ tuning: Tuning.parseStringNotes(fretInstrument.tuningArray), number_of_frets: fretInstrument.number_of_frets });
     }
 
+    static tuningsByInstrument(instrumentName){
+        var instruments = [];
+        rawInstrumentData.forEach((item) => {
+            if (item.instrument == instrumentName) {
+                instruments.push(item);
+            }
+        });
+        return instruments
+    }
 
 }
 

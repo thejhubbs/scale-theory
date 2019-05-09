@@ -1,4 +1,4 @@
-# scale-theory
+# scale-theory V1.0
 Personal project I made because there were no good apps that let you 
 Easily and freely access all tuning and scales. 
 
