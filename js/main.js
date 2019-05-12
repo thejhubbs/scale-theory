@@ -66,7 +66,7 @@ function initializeMenus(defaultGuitar, defaultScale) {
     createMenuHTML('key', Note.diatonicKeyChoices(), 0);
 
     createMenuHTML('category', rawScaleText, 'category');
-    createMenuHTML('scale', ScaleType.scalesWithCategory('Basic'), 'name');
+    createMenuHTML('scale', ScaleType.scalesWithCategory('Basic Scales'), 'name');
  
     createMenuHTML('instrument', rawInstrumentData, 'instrument');
     createMenuHTML('tuning', FretInstrument.tuningsByInstrument('Guitar'), 'description');
