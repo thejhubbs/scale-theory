@@ -8,7 +8,7 @@ Click on a root note to highlight all notes in the scale within 5 frets
 
 Scales are separated by a category
 
-20+ scales and 4 instruments with 10+ tunings.
+20+ scales and 5 instruments with 20+ tunings.
 
 
 Written in pure JS.
@@ -17,6 +17,8 @@ Written in pure JS.
 1. Icon & favicon
 2. Ad space
 3. Test firefox & safari
+4. Google Analytics
+5. Force Https://
 
 3+
 Download & import googlefont files
